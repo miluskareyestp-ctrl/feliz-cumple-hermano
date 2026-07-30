@@ -1,9 +1,21 @@
-function mostrarMensaje() {
-    const mensaje = document.getElementById("mensaje");
-    mensaje.style.display = "block";
+window.onload=function(){
 
-    // Desplaza suavemente hasta el mensaje
-    mensaje.scrollIntoView({
-        behavior: "smooth"
-    });
+setTimeout(function(){
+
+document.getElementById("loader").style.display="none";
+
+},4000);
+
+}
+
+function mostrarMensaje(){
+
+document.getElementById("mensaje").style.display="block";
+
+document.getElementById("mensaje").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
 }
