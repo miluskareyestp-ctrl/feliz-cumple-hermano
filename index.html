@@ -1,105 +1,425 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎉 Feliz Cumpleaños Querido Hermano 🎉</title>
 
-<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz cumpleaños Cindy 🎂</title>
+
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-<!-- Pantalla de carga -->
-<div id="loader">
-    <h1>💻 Inicializando sorpresa...</h1>
+    <!-- PANTALLA DE CARGA -->
+    <div id="loader">
 
-    <div class="barra">
-        <div class="progreso"></div>
-    </div>
+        <h2>Preparando una sorpresa... 💕</h2>
 
-    <p>Cargando recuerdos...</p>
-</div>
+        <p>Para Cindy Vereniz Reyes Arteaga</p>
 
-<!-- Contenido principal -->
-<div class="container">
-
-    <h1>🎉 ¡Feliz Cumpleaños Querido Hermano! 🎉</h1>
-
-    <img src="FB_IMG_1785451989439.jpg" class="foto">
-
-    <h2>Para mi querido hermano mayor</h2>
-
-    <p>
-        Hoy celebramos la vida de un hombre extraordinario.<br><br>
-
-        👨‍👧 Un padre ejemplar.<br>
-        👨‍🏫 Un profesor comprometido.<br>
-        ⚽ Un director técnico apasionado.<br>
-        ❤️ Un hermano que siempre da lo mejor de sí.<br><br>
-
-        Gracias por ser un ejemplo de disciplina, responsabilidad y amor.
-    </p>
-
-    <button onclick="mostrarMensaje()">
-        🚀 Iniciar sorpresa
-    </button>
-
-    <div id="mensaje">
-
-        <h2>❤️ Feliz Cumpleaños ❤️</h2>
-
-        <p>
-            Hoy queremos decirte cuánto te admiramos.
-
-            Gracias por ser un gran padre,
-            un excelente profesor,
-            un líder dentro y fuera de la cancha
-            y un hermano que siempre inspira.
-
-            Que Dios bendiga cada paso de tu vida,
-            te conceda salud,
-            sabiduría,
-            felicidad
-            y muchos años más junto a quienes te queremos.
-
-            Nunca dejes de soñar,
-            nunca dejes de sonreír.
-
-            🎂 ¡Feliz Cumpleaños! 🎂🥳
-        </p>
-
-        <h2>🎵 Tu canción</h2>
-
-        <audio controls loop>
-            <source src="PASTORAS YAUYINAS - JUVENTUD LIRA QUINCHINA -YAUYOS.mp3" type="audio/mpeg">
-        </audio>
-
-        <br><br>
-
-        <h2>🎥 Algunos personajes querían dejarte un mensaje...</h2>
-
-        <video controls width="100%">
-            <source src="lv_7660929633914768641_20260730184814.mp4" type="video/mp4">
-        </video>
-
-        <br><br>
-
-        <video controls width="100%">
-            <source src="2026-07-30-175500196.mp4" type="video/mp4">
-        </video>
-
-        <br><br>
-
-        <video controls width="100%">
-            <source src="2026-07-30-184935206.mp4" type="video/mp4">
-        </video>
+        <div class="barra">
+            <div class="progreso"></div>
+        </div>
 
     </div>
 
-</div>
 
-<script src="script.js"></script>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+
+        <!-- PORTADA -->
+        <section>
+
+            <p>✨ Hoy es un día muy especial ✨</p>
+
+            <h1>
+                ¡Feliz cumpleaños, Cindy! 🎂
+            </h1>
+
+            <p>
+                Hoy celebramos tus 23 años de vida,
+                tus sueños, tus logros y todos los momentos
+                que hemos compartido juntas. 💕
+            </p>
+
+            <img
+                src="FB_IMG_1785451989439.jpg"
+                alt="Cindy"
+                class="foto"
+            >
+
+            <br>
+
+            <button onclick="mostrarMensaje()">
+                💖 Tengo una sorpresa para ti
+            </button>
+
+        </section>
+
+
+        <!-- MENSAJE OCULTO -->
+        <section id="mensaje">
+
+            <h2>
+                Cindy Vereniz Reyes Arteaga
+            </h2>
+
+            <h3>
+                ✨ 23 años ✨
+            </h3>
+
+            <p>
+                Hoy no es un día cualquiera...
+            </p>
+
+            <p>
+                Hoy celebramos a una persona muy especial,
+                una hermana, una compañera de aventuras
+                y alguien que forma parte de tantos recuerdos
+                bonitos de mi vida. ❤️
+            </p>
+
+        </section>
+
+
+        <!-- RECUERDOS -->
+        <section class="tarjeta">
+
+            <h2>
+                Nuestros recuerdos 💕
+            </h2>
+
+            <p>
+                A lo largo de los años hemos compartido
+                risas, conversaciones, momentos buenos,
+                momentos difíciles y muchas historias
+                que siempre llevaremos con nosotras.
+            </p>
+
+            <div class="galeria">
+
+                <img
+                    src="FB_IMG_1785451989439.jpg"
+                    alt="Recuerdo de Cindy"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- VIDEO 1 -->
+        <section class="tarjeta">
+
+            <h2>
+                🎬 Un recuerdo especial
+            </h2>
+
+            <video controls playsinline>
+
+                <source
+                    src="2026-07-30-175500196.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+        </section>
+
+
+        <!-- VIDEO 2 -->
+        <section class="tarjeta">
+
+            <h2>
+                💕 Más momentos para recordar
+            </h2>
+
+            <video controls playsinline>
+
+                <source
+                    src="2026-07-30-184935206.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+        </section>
+
+
+        <!-- CARTA -->
+        <section class="tarjeta">
+
+            <h2>
+                💌 Una pequeña carta para ti
+            </h2>
+
+            <p>
+                Querida Cindy:
+            </p>
+
+            <p>
+                Hoy quiero aprovechar tu cumpleaños
+                para decirte lo importante que eres para mí.
+            </p>
+
+            <p>
+                Hemos compartido diferentes etapas de nuestras vidas,
+                hemos reído, conversado, aprendido y vivido
+                momentos que forman parte de nuestra historia.
+            </p>
+
+            <p>
+                Deseo de corazón que estos 23 años sean el comienzo
+                de una etapa llena de oportunidades, aprendizajes,
+                alegrías y sueños cumplidos.
+            </p>
+
+            <p>
+                Nunca dejes de luchar por aquello que quieres,
+                nunca dejes de creer en ti y recuerda siempre
+                que tienes muchísimo por delante.
+            </p>
+
+            <p>
+                Que la vida te regale muchas razones para sonreír,
+                personas que te quieran sinceramente,
+                experiencias bonitas y muchos momentos
+                que algún día podamos recordar juntas.
+            </p>
+
+            <p>
+                Te deseo un muy feliz cumpleaños, Cindy. ❤️
+            </p>
+
+            <p>
+                Con mucho cariño,<br>
+                <strong>Tu hermana Miluska 💕</strong>
+            </p>
+
+        </section>
+
+
+        <!-- SORPRESA -->
+        <section class="tarjeta">
+
+            <h2>
+                🎁 Hay algo más para ti...
+            </h2>
+
+            <p>
+                Porque un cumpleaños especial
+                merece una última sorpresa.
+            </p>
+
+            <button onclick="abrirRegalo()">
+                🎁 Abrir mi sorpresa
+            </button>
+
+            <div id="regalo" style="display:none;">
+
+                <h1>
+                    🎉 ¡SORPRESA! 🎉
+                </h1>
+
+                <p>
+                    ¡Feliz cumpleaños, Cindy!
+                </p>
+
+                <p>
+                    Que tus 23 años estén llenos de
+                    nuevas aventuras, sueños cumplidos,
+                    risas, amor familiar y momentos inolvidables.
+                </p>
+
+                <p>
+                    ✨ ¡Disfruta muchísimo tu día! ✨
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENSAJE FINAL -->
+        <section class="tarjeta">
+
+            <h2>
+                ✨ Y esto recién comienza...
+            </h2>
+
+            <p>
+                Cindy, disfruta cada etapa de tu vida.
+            </p>
+
+            <p>
+                Ríe mucho.<br>
+                Sueña en grande.<br>
+                Atrévete a comenzar de nuevo.<br>
+                Celebra tus pequeños logros.<br>
+                Y nunca olvides todo lo que eres capaz de conseguir. ❤️
+            </p>
+
+        </section>
+
+
+        <!-- FINAL -->
+        <section>
+
+            <h1>
+                🎂✨ FELIZ 23 AÑOS, CINDY ✨🎂
+            </h1>
+
+            <h3>
+                Cindy Vereniz Reyes Arteaga
+            </h3>
+
+            <p>
+                Que este nuevo año de vida
+                te traiga muchas alegrías,
+                nuevos sueños y momentos inolvidables.
+            </p>
+
+            <p>
+                ¡Te quiero mucho, hermanita! ❤️
+            </p>
+
+            <p>
+                Con cariño,<br>
+                Miluska 💕
+            </p>
+
+            <br>
+
+            <p>
+                🥂 Por tus 23 años...
+            </p>
+
+            <p>
+                y por todos los que todavía nos quedan
+                por celebrar juntas. ✨
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <!-- CORAZONES -->
+    <div class="corazon" style="left:10%; animation-delay:0s;">❤️</div>
+    <div class="corazon" style="left:30%; animation-delay:2s;">💕</div>
+    <div class="corazon" style="left:50%; animation-delay:1s;">💖</div>
+    <div class="corazon" style="left:70%; animation-delay:3s;">💗</div>
+    <div class="corazon" style="left:90%; animation-delay:4s;">❤️</div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        /* QUITAR PANTALLA DE CARGA */
+
+        window.addEventListener("load", function () {
+
+            setTimeout(function () {
+
+                document.getElementById("loader").style.display = "none";
+
+            }, 4200);
+
+        });
+
+
+        /* MOSTRAR MENSAJE */
+
+        function mostrarMensaje() {
+
+            const mensaje = document.getElementById("mensaje");
+
+            mensaje.style.display = "block";
+
+            mensaje.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /* ABRIR REGALO */
+
+        function abrirRegalo() {
+
+            const regalo = document.getElementById("regalo");
+
+            regalo.style.display = "block";
+
+            regalo.scrollIntoView({
+                behavior: "smooth"
+            });
+
+            lanzarConfeti();
+
+        }
+
+
+        /* CONFETI */
+
+        function lanzarConfeti() {
+
+            for (let i = 0; i < 35; i++) {
+
+                const confeti = document.createElement("div");
+
+                confeti.innerHTML = ["🎉", "✨", "🎊", "💖", "🎈"][
+                    Math.floor(Math.random() * 5)
+                ];
+
+                confeti.style.position = "fixed";
+                confeti.style.left = Math.random() * 100 + "vw";
+                confeti.style.top = "-30px";
+                confeti.style.fontSize = "25px";
+                confeti.style.zIndex = "9999";
+                confeti.style.pointerEvents = "none";
+
+                document.body.appendChild(confeti);
+
+                const duracion =
+                    2000 + Math.random() * 3000;
+
+                confeti.animate(
+                    [
+                        {
+                            transform: "translateY(0) rotate(0deg)",
+                            opacity: 1
+                        },
+                        {
+                            transform:
+                                "translateY(110vh) rotate(720deg)",
+                            opacity: 0
+                        }
+                    ],
+                    {
+                        duration: duracion,
+                        easing: "linear"
+                    }
+                );
+
+                setTimeout(function () {
+
+                    confeti.remove();
+
+                }, duracion);
+
+            }
+
+        }
+
+    </script>
 
 </body>
+
 </html>
