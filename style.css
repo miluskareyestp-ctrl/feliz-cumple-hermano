@@ -5,9 +5,9 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #160b24, #3b164f, #711f5f);
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    background: radial-gradient(circle at center, #2a123f 0%, #150824 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -15,19 +15,20 @@ body {
 .container {
     max-width: 850px;
     margin: auto;
-    padding: 30px 20px 60px;
+    padding: 40px 20px 80px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 /* PANTALLA DE CARGA */
-
 #loader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #160b24, #3b164f);
+    background: linear-gradient(135deg, #160b24, #2a123f, #4a155c);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,178 +38,191 @@ body {
 
 #loader h2 {
     color: #ffd6f5;
-    font-size: 28px;
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
     margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 126, 179, 0.6);
 }
 
 .barra {
-    width: 280px;
-    height: 18px;
-    background: #4b3155;
+    width: 300px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     overflow: hidden;
     margin-top: 20px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .progreso {
     height: 100%;
-    background: linear-gradient(90deg, #ff7eb3, #ffd166);
+    background: linear-gradient(90deg, #ff7eb3, #ffd166, #ff4f9a);
     width: 0;
     animation: cargar 4s forwards;
+    border-radius: 30px;
 }
 
 @keyframes cargar {
-    from {
-        width: 0%;
-    }
-
-    to {
-        width: 100%;
-    }
+    from { width: 0%; }
+    to { width: 100%; }
 }
 
-/* TITULOS */
-
+/* TIPOGRAFÍAS Y TÍTULOS */
 h1 {
+    font-family: 'Pacifico', cursive;
     color: #ffd6f5;
-    font-size: 46px;
-    text-shadow: 0 0 20px rgba(255, 126, 179, 0.8);
+    font-size: 52px;
+    text-shadow: 0 0 25px rgba(255, 126, 179, 0.8), 0 0 10px rgba(255, 209, 102, 0.5);
+    margin-bottom: 15px;
+    font-weight: normal;
 }
 
 h2 {
+    font-family: 'Pacifico', cursive;
     color: #ffd166;
-    font-size: 32px;
+    font-size: 38px;
+    text-shadow: 0 0 15px rgba(255, 209, 102, 0.4);
+    font-weight: normal;
 }
 
 h3 {
     color: #ffb6d9;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 /* FOTO PRINCIPAL */
-
 .foto {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid #ffd166;
     box-shadow:
-        0 0 20px #ff7eb3,
-        0 0 50px rgba(255, 209, 102, 0.5);
-    margin: 25px;
+        0 0 30px rgba(255, 126, 179, 0.7),
+        0 0 60px rgba(255, 209, 102, 0.4);
+    margin: 30px auto;
+    transition: transform 0.5s ease;
 }
 
-/* BOTONES */
+.foto:hover {
+    transform: scale(1.05) rotate(2deg);
+}
 
+/* BOTONES BRILLANTES */
 button {
     background: linear-gradient(135deg, #ff4f9a, #b84cff);
-    padding: 16px 30px;
+    padding: 18px 35px;
     border: none;
     color: white;
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    font-weight: bold;
-    border-radius: 30px;
+    font-weight: 700;
+    border-radius: 40px;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(184, 76, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #ff7eb3;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 35px #ff7eb3, 0 10px 30px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #ff3385, #aa33ff);
 }
 
-/* MENSAJE */
-
+/* MENSAJE OCULTO */
 #mensaje {
     display: none;
-    animation: aparecer 1.2s;
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 25px;
-    padding: 30px;
-    line-height: 1.8;
+    animation: aparecer 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 35px;
+    line-height: 1.9;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
-/* TARJETAS */
-
+/* TARJETAS GLASSMORPHISM */
 .tarjeta {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 25px;
-    padding: 25px;
-    margin: 30px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    padding: 35px 30px;
+    margin: 40px 0;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+    border-color: rgba(255, 126, 179, 0.4);
 }
 
 .tarjeta p {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.9;
+    color: #f1e6f7;
 }
 
-/* FOTOS */
-
+/* GALERÍA DE FOTOS */
 .galeria {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-top: 25px;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .galeria img {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
     border-radius: 20px;
-    border: 3px solid #ffb6d9;
-    transition: 0.4s;
+    border: 3px solid rgba(255, 182, 217, 0.5);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .galeria img:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
+    border-color: #ffd166;
+    box-shadow: 0 0 20px rgba(255, 209, 102, 0.6);
 }
 
-/* VIDEO */
-
+/* VIDEOS */
 video {
     width: 100%;
     max-width: 750px;
     border-radius: 20px;
-    margin-top: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    margin-top: 25px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-/* MUSICA */
-
-audio {
-    width: 100%;
-    margin-top: 20px;
-}
-
-/* ANIMACION */
-
+/* ANIMACIÓN DE APARICIÓN */
 @keyframes aparecer {
     from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(40px) scale(0.98);
     }
-
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
-/* CORAZONES */
-
+/* CORAZONES FLOTANTES */
 .corazon {
     position: fixed;
-    bottom: -30px;
-    font-size: 25px;
+    bottom: -40px;
+    font-size: 28px;
     animation: subir 6s linear infinite;
     pointer-events: none;
     z-index: 10;
+    filter: drop-shadow(0 0 8px rgba(255, 126, 179, 0.6));
 }
 
 @keyframes subir {
@@ -216,53 +230,29 @@ audio {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
     }
-
     100% {
-        transform: translateY(-110vh) rotate(360deg);
+        transform: translateY(-115vh) rotate(360deg);
         opacity: 0;
     }
 }
 
-/* ESTRELLAS */
-
-.estrella {
-    position: fixed;
-    color: #ffd166;
-    animation: brillar 2s infinite alternate;
-    pointer-events: none;
-}
-
-@keyframes brillar {
-    from {
-        opacity: 0.3;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-}
-
-/* RESPONSIVE PARA CELULAR */
-
+/* RESPONSIVE PARA CELULARES */
 @media (max-width: 600px) {
-
     .container {
-        padding: 25px 15px 50px;
+        padding: 25px 15px 60px;
     }
 
     h1 {
-        font-size: 34px;
+        font-size: 38px;
     }
 
     h2 {
-        font-size: 26px;
+        font-size: 30px;
     }
 
     .foto {
-        width: 200px;
-        height: 200px;
+        width: 210px;
+        height: 210px;
     }
 
     .galeria {
@@ -270,15 +260,16 @@ audio {
     }
 
     .galeria img {
-        height: 280px;
+        height: 300px;
     }
 
     button {
-        font-size: 18px;
-        padding: 14px 25px;
+        font-size: 17px;
+        padding: 15px 25px;
+        width: 100%;
     }
 
     .tarjeta {
-        padding: 20px;
+        padding: 25px 20px;
     }
 }
