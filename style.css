@@ -1,203 +1,284 @@
-body{
-
-margin:0;
-
-padding:0;
-
-background:#0d1117;
-
-font-family:Arial,Helvetica,sans-serif;
-
-color:white;
-
+* {
+    box-sizing: border-box;
 }
 
-.container{
-
-max-width:800px;
-
-margin:auto;
-
-padding:40px;
-
-text-align:center;
-
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #160b24, #3b164f, #711f5f);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-#loader{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:#0d1117;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:999;
-
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px 20px 60px;
+    text-align: center;
 }
 
-.barra{
+/* PANTALLA DE CARGA */
 
-width:300px;
-
-height:20px;
-
-background:#30363d;
-
-border-radius:30px;
-
-overflow:hidden;
-
-margin-top:20px;
-
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #160b24, #3b164f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-.progreso{
-
-height:100%;
-
-background:#58a6ff;
-
-width:0;
-
-animation:cargar 4s forwards;
-
+#loader h2 {
+    color: #ffd6f5;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-@keyframes cargar{
-
-from{
-
-width:0%;
-
+.barra {
+    width: 280px;
+    height: 18px;
+    background: #4b3155;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
-to{
-
-width:100%;
-
+.progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #ff7eb3, #ffd166);
+    width: 0;
+    animation: cargar 4s forwards;
 }
 
+@keyframes cargar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
-h1{
+/* TITULOS */
 
-color:#58a6ff;
-
-font-size:42px;
-
+h1 {
+    color: #ffd6f5;
+    font-size: 46px;
+    text-shadow: 0 0 20px rgba(255, 126, 179, 0.8);
 }
 
-h2{
-
-color:#58a6ff;
-
+h2 {
+    color: #ffd166;
+    font-size: 32px;
 }
 
-.foto{
-
-width:230px;
-
-height:230px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:6px solid #58a6ff;
-
-box-shadow:0 0 30px #58a6ff;
-
-margin:30px;
-
+h3 {
+    color: #ffb6d9;
 }
 
-button{
+/* FOTO PRINCIPAL */
 
-background:#238636;
-
-padding:18px 35px;
-
-border:none;
-
-color:white;
-
-font-size:22px;
-
-border-radius:12px;
-
-cursor:pointer;
-
-transition:.3s;
-
+.foto {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #ffd166;
+    box-shadow:
+        0 0 20px #ff7eb3,
+        0 0 50px rgba(255, 209, 102, 0.5);
+    margin: 25px;
 }
 
-button:hover{
+/* BOTONES */
 
-transform:scale(1.1);
-
-background:#2ea043;
-
+button {
+    background: linear-gradient(135deg, #ff4f9a, #b84cff);
+    padding: 16px 30px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-#mensaje{
-
-display:none;
-
-animation:aparecer 1s;
-
-margin-top:30px;
-
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #ff7eb3;
 }
 
-video{
+/* MENSAJE */
 
-width:100%;
-
-border-radius:20px;
-
-margin-top:20px;
-
+#mensaje {
+    display: none;
+    animation: aparecer 1.2s;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 30px;
+    line-height: 1.8;
 }
 
-audio{
+/* TARJETAS */
 
-width:100%;
-
-margin-top:20px;
-
+.tarjeta {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
 }
 
-@keyframes aparecer{
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
+.tarjeta p {
+    font-size: 18px;
+    line-height: 1.8;
 }
 
-to{
+/* FOTOS */
 
-opacity:1;
-
-transform:translateY(0);
-
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 25px;
 }
 
+.galeria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid #ffb6d9;
+    transition: 0.4s;
+}
+
+.galeria img:hover {
+    transform: scale(1.04);
+}
+
+/* VIDEO */
+
+video {
+    width: 100%;
+    max-width: 750px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* MUSICA */
+
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ANIMACION */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CORAZONES */
+
+.corazon {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    animation: subir 6s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ESTRELLAS */
+
+.estrella {
+    position: fixed;
+    color: #ffd166;
+    animation: brillar 2s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes brillar {
+    from {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* RESPONSIVE PARA CELULAR */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 25px 15px 50px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .foto {
+        width: 200px;
+        height: 200px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: 280px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 14px 25px;
+    }
+
+    .tarjeta {
+        padding: 20px;
+    }
 }
